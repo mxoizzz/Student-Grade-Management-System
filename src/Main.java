@@ -45,11 +45,28 @@ public class Main {
             System.out.println("Student Not Found !");
         }
     }
+    public static void updateMarks(){
+        System.out.println("Enter Student's Name: ");
+        int i = findIndex(scn.nextLine());
+        
+        if(i != -1){
+            System.out.println("Current Marks: "+studentMarks[i]);
+            System.out.println("Enter Updated Marks: ");
+            studentMarks[i] = scn.nextDouble();
+            scn.nextLine();
+            System.out.println("Marks Updated Successfully !");
+        }
+        else{
+            System.out.println("Student Not Found !");
+        }
+    }
     public static void main(String[] args){
         addStudent();
         addStudent();
         addStudent();
         displayStudents();
         searchStudent();
+        updateMarks();
+        displayStudents();
     }
 }
