@@ -60,7 +60,53 @@ public class Main {
             System.out.println("Student Not Found !");
         }
     }
+    public static void deleteStudent(){
+        System.out.println("Enter Name of the Student: ");
+        int i = findIndex(scn.nextLine());
+
+        if(i!=-1){
+            while(i<id){
+                studentNames[i] = studentNames[i+1];
+                studentMarks[i] = studentMarks[i+1];
+                i++;
+            }
+            id--;
+            System.out.println("Student Deleted Successfully !");
+        }
+        else{
+            System.out.println("Student Not Found !");
+        }
+    }
+    public static void averageMarks(){
+        double sum=0;
+        int i=0;
+        while(i<id){
+            sum+=studentMarks[i];
+            i++;
+        }
+        System.out.println("Average Marks: "+ sum/id);
+    }
+    public static void highestMarks(){
+        double max = studentMarks[0];
+        for(int i =1;i<id;i++){
+            if(studentMarks[i] > max){
+                max = studentMarks[i];
+            }
+        }
+        System.out.println("Highest Marks: "+max);
+    }
+    public static void lowestMarks(){
+        double min = studentMarks[0];
+        for(int i =1;i<id;i++){
+            if(studentMarks[i] < min){
+                min = studentMarks[i];
+            }
+        }
+        System.out.println("Lowest Marks: "+min);
+    }
     public static void main(String[] args){
+        addStudent();
+        addStudent();
         addStudent();
         addStudent();
         addStudent();
@@ -68,5 +114,10 @@ public class Main {
         searchStudent();
         updateMarks();
         displayStudents();
+        deleteStudent();
+        displayStudents();
+        averageMarks();
+        highestMarks();
+        lowestMarks();
     }
 }
