@@ -105,19 +105,67 @@ public class Main {
         System.out.println("Lowest Marks: "+min);
     }
     public static void main(String[] args){
-        addStudent();
-        addStudent();
-        addStudent();
-        addStudent();
-        addStudent();
-        displayStudents();
-        searchStudent();
-        updateMarks();
-        displayStudents();
-        deleteStudent();
-        displayStudents();
-        averageMarks();
-        highestMarks();
-        lowestMarks();
+        int choice;
+        System.out.println("Welcome to Student Grade Management System!");
+        while(true){
+            System.out.println("Menu: ");
+            System.out.println("1. Add Student");
+            System.out.println("2. View All Students");
+            System.out.println("3. Search Student");
+            System.out.println("4. Update Marks");
+            System.out.println("5. Delete Student");
+            System.out.println("6. Average Marks");
+            System.out.println("7. Highest Marks");
+            System.out.println("8. Lowest Marks");
+            System.out.println("9. Exit");
+            choice = scn.nextInt();
+            scn.nextLine();
+            switch(choice){
+                case 1:
+                    addStudent();
+                    break;
+                case 2:
+                    displayStudents();
+                    break;
+                case 3:
+                    searchStudent();
+                    break;
+                case 4:
+                    updateMarks();
+                    break;
+                case 5:
+                    deleteStudent();
+                    break;
+                case 6:
+                    averageMarks();
+                    break;
+                case 7:
+                    highestMarks();
+                    break;
+                case 8:
+                    lowestMarks();
+                    break;
+                case 9:
+                    System.out.println("Thanks for Using Student Grade Management System!");
+                    scn.close();
+                    return;
+                default:
+                    System.out.println("Invalid Option Selected! \nPlease Select Between 1-9.");
+            }
+        }
+        // addStudent();
+        // addStudent();
+        // addStudent();
+        // addStudent();
+        // addStudent();
+        // displayStudents();
+        // searchStudent();
+        // updateMarks();
+        // displayStudents();
+        // deleteStudent();
+        // displayStudents();
+        // averageMarks();
+        // highestMarks();
+        // lowestMarks();
     }
 }
